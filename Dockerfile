@@ -3,7 +3,7 @@ MAINTAINER Daekwon Kim <propellerheaven@gmail.com>
 
 # Run apt-get update
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-RUN apt-get update
+RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y -qq curl git python-software-properties unzip
 
 # Install Java
