@@ -1,10 +1,10 @@
-FROM ubuntu:14.04
+FROM dockerfile/ubuntu
 MAINTAINER Daekwon Kim <propellerheaven@gmail.com>
 
 # Run apt-get update
 RUN echo "deb http://archive.ubuntu.com/ubuntu saucy main universe" > /etc/apt/sources.list
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -f -y -q curl git python-software-properties unzip
+RUN apt-get install -f -y -q curl git unzip 
 
 # Install Java
 RUN apt-add-repository -y ppa:webupd8team/java
