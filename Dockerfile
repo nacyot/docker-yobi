@@ -1,10 +1,9 @@
-FROM ubuntu:12.04
+FROM ubuntu:14.04
 MAINTAINER Daekwon Kim <propellerheaven@gmail.com>
 
 # Run apt-get update
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN echo "deb http://archive.ubuntu.com/ubuntu saucy main universe" > /etc/apt/sources.list
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y -q python2.7
 RUN apt-get install -y -q curl git python-software-properties unzip
 
 # Install Java
