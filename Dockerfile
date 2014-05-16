@@ -19,11 +19,11 @@ RUN mv play-2.1.0 play
 
 # Clone Yobi
 RUN git clone https://github.com/nforge/yobi.git /play/yobi
-WORKDIR /play/yobi
-RUN ../play compile
+RUN cd /play/yobi;../play compile
 
 # Run Yobi
 EXPOSE 9000
 ADD ./start.sh /play/yobi/
-RUN chmod +x ./start.sh
+RUN chmod +x /play/yobi/start.sh
+WORKDIR /play/yobi
 CMD /bin/bash -c ./start.sh
